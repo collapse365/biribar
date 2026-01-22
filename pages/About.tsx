@@ -12,7 +12,7 @@ const About: React.FC = () => {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=2000"
+            src={content.about.heroImageUrl}
             className="w-full h-full object-cover opacity-40 grayscale"
             alt="Bar Background"
           />
@@ -52,7 +52,7 @@ const About: React.FC = () => {
             <div className="absolute -inset-4 bg-yellow-400/20 rounded-[3rem] blur-3xl opacity-30 animate-pulse"></div>
             <div className="relative aspect-[4/5] overflow-hidden rounded-[3rem] border border-zinc-800">
               <img
-                src="https://images.unsplash.com/photo-1541301623028-67446214d5f3?auto=format&fit=crop&q=80&w=1200"
+                src={content.about.storyImageUrl}
                 alt="Mixology"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
               />

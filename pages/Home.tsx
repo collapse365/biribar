@@ -13,7 +13,7 @@ const Home: React.FC = () => {
       <section className="relative h-[100vh] flex items-center justify-center text-center px-4">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&q=80&w=2000"
+            src={content.home.heroImageUrl}
             className="w-full h-full object-cover opacity-30"
             alt="Hero Cocktails"
           />
@@ -120,7 +120,7 @@ const Home: React.FC = () => {
           </div>
           <div className="order-1 md:order-2">
             <img 
-              src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?auto=format&fit=crop&q=80&w=1200" 
+              src={content.home.aboutSummaryImageUrl} 
               className="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" 
               alt="Sobre a Biribar" 
             />

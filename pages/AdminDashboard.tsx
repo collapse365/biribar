@@ -184,6 +184,18 @@ const AdminDashboard: React.FC = () => {
             {activeTab === 'home' && (
               <div className="space-y-6">
                 <div>
+                  <label className="font-heading block text-zinc-500 font-bold uppercase text-[10px] tracking-widest mb-2">Imagem de Fundo do Hero (URL)</label>
+                  <input
+                    type="text"
+                    value={formData.home.heroImageUrl}
+                    onChange={(e) => setFormData({ ...formData, home: { ...formData.home, heroImageUrl: e.target.value } })}
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-yellow-400 mb-2"
+                  />
+                  <div className="h-20 w-32 rounded-lg overflow-hidden border border-zinc-800">
+                    <img src={formData.home.heroImageUrl} className="w-full h-full object-cover" />
+                  </div>
+                </div>
+                <div>
                   <label className="font-heading block text-zinc-500 font-bold uppercase text-[10px] tracking-widest mb-2">Título do Hero</label>
                   <input
                     type="text"
@@ -200,6 +212,18 @@ const AdminDashboard: React.FC = () => {
                     className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3 px-4 text-white h-32 focus:outline-none focus:border-yellow-400"
                   />
                 </div>
+                <div>
+                  <label className="font-heading block text-zinc-500 font-bold uppercase text-[10px] tracking-widest mb-2">Imagem da Seção Sobre (Home - URL)</label>
+                  <input
+                    type="text"
+                    value={formData.home.aboutSummaryImageUrl}
+                    onChange={(e) => setFormData({ ...formData, home: { ...formData.home, aboutSummaryImageUrl: e.target.value } })}
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-yellow-400 mb-2"
+                  />
+                  <div className="h-20 w-32 rounded-lg overflow-hidden border border-zinc-800">
+                    <img src={formData.home.aboutSummaryImageUrl} className="w-full h-full object-cover" />
+                  </div>
+                </div>
               </div>
             )}
 
@@ -209,6 +233,17 @@ const AdminDashboard: React.FC = () => {
                   {formData.gallery.map((item, index) => (
                     <div key={item.id} className="bg-zinc-900 p-4 rounded-2xl border border-zinc-800 relative group">
                       <img src={item.url} alt="Thumbnail" className="w-full h-32 object-cover rounded-xl mb-4" />
+                      <label className="text-[9px] text-zinc-600 font-black uppercase mb-1 block">URL da Imagem</label>
+                      <input 
+                        className="w-full bg-black border border-zinc-800 rounded-lg p-2 text-xs mb-2 text-white" 
+                        value={item.url} 
+                        onChange={(e) => {
+                          const newGallery = [...formData.gallery];
+                          newGallery[index].url = e.target.value;
+                          setFormData({...formData, gallery: newGallery});
+                        }}
+                      />
+                      <label className="text-[9px] text-zinc-600 font-black uppercase mb-1 block">Legenda</label>
                       <input 
                         className="w-full bg-black border border-zinc-800 rounded-lg p-2 text-xs mb-2 text-white" 
                         value={item.caption} 
@@ -218,6 +253,7 @@ const AdminDashboard: React.FC = () => {
                           setFormData({...formData, gallery: newGallery});
                         }}
                       />
+                      <label className="text-[9px] text-zinc-600 font-black uppercase mb-1 block">Categoria</label>
                       <select 
                         className="w-full bg-black border border-zinc-800 rounded-lg p-2 text-xs text-zinc-400"
                         value={item.category}
@@ -233,7 +269,7 @@ const AdminDashboard: React.FC = () => {
                       </select>
                       <button 
                         onClick={() => removeGalleryItem(item.id)}
-                        className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
                       >
                         <Trash2 size={16} />
                       </button>
@@ -251,6 +287,18 @@ const AdminDashboard: React.FC = () => {
 
             {activeTab === 'about' && (
               <div className="space-y-6">
+                <div>
+                  <label className="font-heading block text-zinc-500 font-bold uppercase text-[10px] tracking-widest mb-2">Imagem do Hero (URL)</label>
+                  <input
+                    type="text"
+                    value={formData.about.heroImageUrl}
+                    onChange={(e) => setFormData({ ...formData, about: { ...formData.about, heroImageUrl: e.target.value } })}
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-yellow-400 mb-2"
+                  />
+                  <div className="h-20 w-32 rounded-lg overflow-hidden border border-zinc-800">
+                    <img src={formData.about.heroImageUrl} className="w-full h-full object-cover" />
+                  </div>
+                </div>
                  <div>
                   <label className="font-heading block text-zinc-500 font-bold uppercase text-[10px] tracking-widest mb-2">História da Marca</label>
                   <textarea
@@ -258,6 +306,18 @@ const AdminDashboard: React.FC = () => {
                     onChange={(e) => setFormData({ ...formData, about: { ...formData.about, history: e.target.value } })}
                     className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3 px-4 text-white h-32 focus:outline-none focus:border-yellow-400"
                   />
+                </div>
+                <div>
+                  <label className="font-heading block text-zinc-500 font-bold uppercase text-[10px] tracking-widest mb-2">Imagem da História (URL)</label>
+                  <input
+                    type="text"
+                    value={formData.about.storyImageUrl}
+                    onChange={(e) => setFormData({ ...formData, about: { ...formData.about, storyImageUrl: e.target.value } })}
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-yellow-400 mb-2"
+                  />
+                  <div className="h-20 w-32 rounded-lg overflow-hidden border border-zinc-800">
+                    <img src={formData.about.storyImageUrl} className="w-full h-full object-cover" />
+                  </div>
                 </div>
                 <div>
                   <label className="font-heading block text-zinc-500 font-bold uppercase text-[10px] tracking-widest mb-2">Essência (Destaque)</label>
@@ -323,6 +383,23 @@ const AdminDashboard: React.FC = () => {
                   <div key={service.id} className="p-8 border border-zinc-800 rounded-3xl bg-zinc-900/50 space-y-6">
                     <div className="flex justify-between items-center">
                       <h3 className="text-white font-black uppercase text-sm tracking-widest">Serviço: {service.title}</h3>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="font-heading text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Imagem do Serviço (URL)</label>
+                      <input
+                        type="text"
+                        value={service.imageUrl}
+                        onChange={(e) => {
+                          const newServices = [...formData.services];
+                          newServices[serviceIndex].imageUrl = e.target.value;
+                          setFormData({ ...formData, services: newServices });
+                        }}
+                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-yellow-400"
+                      />
+                      <div className="h-20 w-32 rounded-lg overflow-hidden border border-zinc-800 mt-2">
+                        <img src={service.imageUrl} className="w-full h-full object-cover" />
+                      </div>
                     </div>
                     
                     <div className="space-y-2">

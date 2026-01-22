@@ -5,6 +5,8 @@ export const INITIAL_CMS_CONTENT: CMSContent = {
   home: {
     heroTitle: "CRIAMOS O BAR DOS SEUS SONHOS",
     heroSubtitle: "Sofisticação, coquetelaria premium e uma energia contagiante para tornar seu evento uma experiência inesquecível.",
+    heroImageUrl: "https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&q=80&w=2000",
+    aboutSummaryImageUrl: "https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?auto=format&fit=crop&q=80&w=1200",
     stats: [
       { label: "Eventos Realizados", value: "850+" },
       { label: "Clientes Encantados", value: "15k+" },
@@ -18,7 +20,9 @@ export const INITIAL_CMS_CONTENT: CMSContent = {
     essence: "Com um espírito jovem e equipe altamente treinada, garantimos que cada drink servido seja um espetáculo à parte, unindo técnica clássica e inovação constante.",
     mission: "Proporcionar experiências memoráveis através de uma coquetelaria de excelência, unindo hospitalidade, criatividade e uma energia contagiante em cada celebração.",
     vision: "Ser a principal referência em bar móvel premium no Brasil, reconhecida pela inovação constante e pelo padrão impecável de atendimento e mixologia.",
-    values: ["Excelência no Atendimento", "Inovação Criativa", "Integridade e Ética", "Paixão por Celebrar", "Qualidade Inegociável"]
+    values: ["Excelência no Atendimento", "Inovação Criativa", "Integridade e Ética", "Paixão por Celebrar", "Qualidade Inegociável"],
+    heroImageUrl: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=2000",
+    storyImageUrl: "https://images.unsplash.com/photo-1541301623028-67446214d5f3?auto=format&fit=crop&q=80&w=1200"
   },
   services: [
     {

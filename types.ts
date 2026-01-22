@@ -27,6 +27,8 @@ export interface CMSContent {
   home: {
     heroTitle: string;
     heroSubtitle: string;
+    heroImageUrl: string;
+    aboutSummaryImageUrl: string;
     stats: { label: string; value: string }[];
   };
   about: {
@@ -36,6 +38,8 @@ export interface CMSContent {
     mission: string;
     vision: string;
     values: string[];
+    heroImageUrl: string;
+    storyImageUrl: string;
   };
   services: ServiceDetail[];
   gallery: GalleryItem[];
