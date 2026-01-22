@@ -1,0 +1,7 @@
+{
+  "name": "BIRIBAR DRINK'S - Mobile Bar Experience",
+  "description": "Professional multi-page website for BIRIBAR DRINK'S, a mobile bar service for events, featuring a custom CMS for content management.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
